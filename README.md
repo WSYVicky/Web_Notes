@@ -15,7 +15,7 @@
 
 ## 2 Codepen练习
 
-| [京东轮播图](https://codepen.io/vicky_Wang/pen/xJLdoG)       | [表格全选](https://codepen.io/vicky_Wang/pen/mjwKxm)         |
+| Title                                                        | Title                                                        |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [不同透明度](<https://codepen.io/vicky_Wang/pen/qyVELY>)     | [美女相册](https://codepen.io/vicky_Wang/pen/VBWXBx)         |
 | [五星评分](<https://codepen.io/vicky_Wang/pen/mjqyBz>)       | [tab栏切换](https://codepen.io/vicky_Wang/pen/xJrPqq)        |
@@ -31,6 +31,7 @@
 | [定位包含框](https://codepen.io/vicky_Wang/pen/zjWgQN)       | [设计可伸缩模板](https://codepen.io/vicky_Wang/pen/WJJPyQ)   |
 | [左侧固定宽度，右侧宽度自适应](https://codepen.io/vicky_Wang/pen/LdmPKz) | [Use the TwichTV JSON API](https://codepen.io/vicky_Wang/pen/YagYdp) |
 | [Show the local weather](https://codepen.io/vicky_Wang/pen/qxMMBB) | [大众点评/猜你喜欢（列表）模型](https://codepen.io/vicky_Wang/pen/PRwJya) |
+| [京东轮播图](https://codepen.io/vicky_Wang/pen/xJLdoG)       | [表格全选](https://codepen.io/vicky_Wang/pen/mjwKxm)         |
 
 ## 3 视频课练习
 
