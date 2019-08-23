@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label for="email">邮箱：</label>
+<input type="text" id="email" />
+<script>
+    document.getElementById("email").onblur = function () {
+      var reg = /^[0-9a-zA-Z._-]+[@][0-9a-zA-Z_.-]+([.][a-zA-Z]+){1,2}$/;
+      if(reg.test(this.value)){
+        this.style.backgroundColor = "green";
+      }else {
+        this.style.backgroundColor = "pink";
+      }
+    };
+</script>
+</body>
+</html>

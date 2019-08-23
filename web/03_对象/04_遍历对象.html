@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>遍历对象</title>
+</head>
+<body>
+<script>
+    /*
+    * JSON格式：键值对，键和值都是双引号括起来
+    *
+    **/
+    var json = {
+      "name":"小明",
+      "age":"10",
+      "sex":"男"
+    }
+
+    /*
+    * 遍历对象
+    *
+    **/
+    for(var key in json){
+      console.log(key+"====="+json[key]);
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            cursor: pointer;
+        }
+
+        div {
+            width: 200px;
+            height: 400px;
+            border: 2px solid pink;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="创建列表" id="btn"/>
+<div id="dv"></div>
+<script src="../common.js"></script>
+<script>
+  var kungfu = ["降龙十八掌", "黯然销魂掌", "葵花宝典", "九阴真经", "吸星大法", "如来神掌", "化骨绵掌", "玉女心经", "极乐神功", "辟邪剑谱"];
+  //（1）给按钮注册点击事件
+  my$("btn").onclick = function (){
+    // （2）创建ul
+    var ulObj = document.createElement("ul");
+    //（3）加到元素dv中
+    my$("dv").appendChild(ulObj);
+    // （4）遍历循环即将要更新的数组
+    for (var i=0; i<kungfu.length; i++){
+      // （5）创建li
+      var liObj = document.createElement("li");
+      // （6）设置li中间的文字内容
+      liObj.innerHTML = kungfu[i];
+      // （7）将li加入到ul中
+      ulObj.appendChild(liObj);
+      // （8）给li注册鼠标进入和离开事件
+      liObj.onmouseover = mouseoverHandle;
+      liObj.onmouseout = mouseoutHandle;
+    }
+  };
+  function mouseoverHandle() {
+    this.style.backgroundColor = "blue";
+  }
+  function mouseoutHandle() {
+    this.style.backgroundColor = "";
+  }
+</script>
+</body>
+</html>

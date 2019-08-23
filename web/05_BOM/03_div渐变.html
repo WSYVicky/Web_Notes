@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>div渐变</title>
+    <style>
+        #dv{
+            width: 200px;
+            height: 200px;
+            background-color: hotpink;
+        }
+    </style>
+</head>
+<body>
+<div id="dv"></div>
+<input type="button" value="渐变" id="btn" />
+<script src="../common.js"></script>
+<script>
+  my$("btn").onclick = function () {
+    var opacity = 10;
+    var timeId = setInterval(function () {
+      opacity--;
+      my$("dv").style.opacity = opacity/10;
+      if (opacity<0){
+        clearInterval(timeId);
+      }
+    },200);
+  };
+</script>
+</body>
+</html>

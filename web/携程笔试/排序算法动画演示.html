@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .dv{
+            width: 800px;
+            height: 100px;
+            margin: 0 auto;
+            border: 1px solid red;
+            position: relative;
+        }
+        ul{
+            list-style: none;
+        }
+        ul li{
+            float: left;
+            position: absolute;
+        }
+        .box{
+            width: 50px;
+            height: 50px;
+            border: 1px solid #000000;
+            margin-left:2px;
+            text-align: center;
+            line-height: 50px;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div id="dv" class="dv">
+    <ul id="ulBox">
+
+    </ul>
+</div>
+<script>
+  function sortAnimate(lines){
+    // 动态创建li元素
+    var ulObj = document.getElementById("ulBox");
+    for(var i=0; i<lines.length; i++){
+      var liObj = document.createElement("li");
+      liObj.innerText = lines[i];
+      liObj.className = "box";
+      liObj.style.left = (i+1)*60+"px";
+      ulObj.appendChild(liObj);
+    }
+
+    //思路：获取li里面的元素，一个一个地比较大小，sort（a,b）,调用animate函数进行调换
+    var lis = ulObj.children;
+
+    function bubbleSort(arr) {
+      // 获取li元素
+      var len = arr.length;
+      var newArr = [];
+      for(var i = 0; i < len; i++){
+        newArr.push(arr[i].innerText);
+      }
+      for (var i = 0; i < newArr.length - 1; i++) {
+        for (var j = 0; j < newArr.length - 1 - i; j++) {
+          if (newArr[j] > newArr[j+1]) {
+            //元素交换
+            //return true;
+            console.log(j);
+            animate(lis[j],54*(j+2));
+            animate(lis[j+1],-54*(j));
+          }
+        }
+      }
+    }
+
+    //animate(lis[0],125)
+   bubbleSort(lis)
+  }
+
+  function animate(element, target) {
+    //清理定时器
+    clearInterval(element.timeId);
+    element.timeId = setInterval(function () {
+      //获取元素的当前位置
+      var current = element.offsetLeft;
+      //移动的步数
+      var step = 10;
+      step = target > current ? step : -step;
+      current += step;
+      if (Math.abs(current - target) > Math.abs(step)) {
+        element.style.left = current + "px";
+      } else {
+        clearInterval(element.timeId);
+        element.style.left = target + "px";
+      }
+    }, 100);
+  }
+  sortAnimate([3,2,1]);
+</script>
+</body>
+</html>

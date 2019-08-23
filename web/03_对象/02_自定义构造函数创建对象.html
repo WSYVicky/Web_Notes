@@ -1,0 +1,23 @@
+g<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义构造函数创建对象</title>
+</head>
+<body>
+<script>
+    //（1）首字母大写
+    function Person(name,age){
+      //（2）添加属性和方法
+      this.name = name;
+      this.age = age;
+      this.sayHi = function(){
+        console.log("我叫："+this.name+",年龄是："+this.age);
+      }
+    }
+    // (3) 创建对象
+    var obj = new Person("小明",10);
+    obj.sayHi();
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>解绑事件</title>
+</head>
+<body>
+<input type="button" value="第一种解绑" id="btn1" />
+<input type="button" value="第二种解绑" id="btn2" />
+<input type="button" value="第三种解绑" id="btn3" />
+
+
+<script src="../common.js"></script>
+<script>
+  /**
+   * 第一种：
+   * 对象.on事件名字 = 事件处理函数 ——> 绑定事件
+   * 对象.on事件名字 = null ——> 解绑事件
+   **/
+  // my$("btn1").onclick=function () {
+  //   alert("事件");
+  // }
+  // my$("btn1").onclick = null;
+
+  /**
+   * 第二种：
+   * 对象.addEventListener = ("没有on的事件类型"，命名函数，false); ——> 绑定事件
+   * 对象.removeEventListener = (没有on的事件类型，命名函数，false); ——> 解绑事件
+   **/
+  // function f1() {
+  //   alert("第二种方式");
+  // }
+  // my$("btn2").addEventListener("click",f1,false);
+  // my$("btn2").removeEventListener("click",f1,false);
+
+  /**
+   * 第三种：
+   * 对象.attachEvent("on事件类型"，命名函数);——>绑定事件
+   * 对象.detachEvent("on事件类型"，命名函数);——>解绑事件
+   **/
+  // function f2() {
+  //   alert("第三种方式");
+  // }
+  // my$("btn3").attachEvent("onclick",f2);
+  // my$("btn3").detach("onclick",f2);
+</script>
+</body>
+</html>

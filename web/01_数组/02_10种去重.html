@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>去重集合</title>
+</head>
+<body>
+<script>
+    //案例1：去掉数组中的0，把其他的数据放在一个新的数组中
+    // var arr = [10,20,30,0,40,0,50,0,60];
+    // var newArr = [];
+    // for(var i=0; i<arr.length; i++){
+    //   if(arr[i]!= 0){
+    //     //把新数组的长度作为下标使用,数组的长度是可以改变的
+    //     newArr[newArr.length] = arr[i];
+    //   }
+    // }
+    // console.log(newArr);
+
+    //方法1：定义一个新数组，并存放原数组的第一个元素，然后将原数组一一和新数组的元素对比，若不同则存放在新数组中
+    // function unique1(arr) {
+    //   var res = [arr[0]];
+    //   for(var i=1; i<arr.length;i++){
+    //     var repeat = false;
+    //     for(var j=0;j<res.length;j++){
+    //       if(arr[i] === res[j]){
+    //         repeat = true;
+    //         break;
+    //       }
+    //     }
+    //     if(!repeat){
+    //       res.push(arr[i]);
+    //     }
+    //   }
+    //   return res;
+    // }
+    //
+    // console.log(unique1([1,1,2,3,4,4,5,4,7,8,6,8,9]));
+
+    //方法2：先将原数组排序，再与相邻的进行比较，如果不同则存入新数组
+    // function unique2(arr) {
+    //   var newArr = arr.sort();
+    //   var res = [newArr[0]];
+    //   for (var i=1; i<newArr.length; i++){
+    //     if(newArr[i] !== res[res.length-1]){
+    //       res.push(newArr[i]);
+    //     }
+    //   }
+    //   return res;
+    // }
+    // console.log(unique2([1,1,2,3,4,4,5,4,7,8,6,8,9]));
+
+    //方法3：利用对象属性存在的特性，如果没有该属性则存入新数组
+    // function unique3(arr) {
+    //   var res = [];
+    //   var obj = {};
+    //   for(var i=0; i<arr.length; i++){
+    //     if(!obj[arr[i]]){
+    //       obj[arr[i]]=1;
+    //       res.push(arr[i]);
+    //     }
+    //   }
+    //   return res;
+    // }
+    // console.log(unique3([1,1,2,3,4,4,5,4,7,8,6,8,9]));
+
+    //方法4：借助indexOf()方法判断此元素在该数组中首次出现的位置下标与循环的下标是否相等
+    // function unique4(arr) {
+    //   for(var i=0;i<arr.length;i++){
+    //     if(arr.indexOf(arr[i])!= i){
+    //       //删除数组元素后数组长度减1后面的元素前移
+    //       arr.splice(i,1);
+    //       //数组下标回退
+    //       i--;
+    //     }
+    //   }
+    //   return arr;
+    // }
+    // console.log(unique4([1,1,2,3,4,4,5,4,7,8,6,8,9]));
+
+    //方法5：利用数组的indexOf下标属性来查询
+    // function unique5(arr) {
+    //   var res = [];
+    //   for(var i=0;i<arr.length;i++){
+    //     if(res.indexOf(arr[i]) === -1){
+    //       res.push(arr[i]);
+    //     }
+    //   }
+    //   return res;
+    // }
+    // console.log(unique5([1,1,2,3,4,4,5,4,7,8,6,8,9]));
+
+    //方法6：利用数组原型对象上的 lastIndexOf 方法
+    // function unique6(arr){
+    //   var res = [];
+    //   for(var i=0; i<arr.length; i++){
+    //     res.lastIndexOf(arr[i]) !== -1 ? '' : res.push(arr[i]);
+    //   }
+    //   return res;
+    // }
+    // console.log(unique6([1,1,2,3,4,4,5,4,7,8,6,8,9]));
+
+    //方法7：利用数组原型对象上的includes方法
+    // function unique7(arr) {
+    //   var res = [];
+    //   for (var i=0; i<arr.length; i++){
+    //     if(!res.includes(arr[i])){
+    //       res.push(arr[i]);
+    //     }
+    //   }
+    //   return res;
+    // }
+    // console.log(unique7([1,1,2,3,4,4,5,4,7,8,6,8,9]));
+
+    //方法8：利用数组原型对象上的 filter 和 includes 方法
+    // function unique8(arr) {
+    //   var res = [];
+    //   res = arr.filter(function (item) {
+    //     return res.includes(item) ? '' : res.push(item);
+    //   })
+    //   return res;
+    // }
+    // console.log(unique8([1,1,2,3,4,4,5,4,7,8,6,8,9]));
+
+    //方法9：利用数组原型对象上的 forEach 和 includes方法
+    // function unique9(arr) {
+    //   var res = [];
+    //   arr.forEach(function (item) {
+    //     res.includes(item) ? '':res.push(item);
+    //   })
+    //   return res;
+    // }
+    // console.log(unique9([1,1,2,3,4,4,5,4,7,8,6,8,9]));
+
+    //方法10：利用 ES6的set 方法
+    // function unique10(arr) {
+    //   return Array.from(new Set(arr));
+    // }
+    // console.log(unique10([1,1,2,3,4,4,5,4,7,8,6,8,9]));
+</script>
+</body>
+</html>

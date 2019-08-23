@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label for="name">中文名字：</label>
+<input type="text" id="name" />
+<script>
+    document.getElementById("name").onblur = function () {
+      var reg=/^[\u4e00-\u9fa5]{2,6}$/;
+      if(reg.test(this.value)){
+        this.style.backgroundColor = "green";
+      }else {
+        this.style.backgroundColor = "pink";
+      }
+    };
+</script>
+</body>
+</html>

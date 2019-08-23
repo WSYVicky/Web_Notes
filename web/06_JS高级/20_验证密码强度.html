@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #dv{
+            width: 300px;
+            height: 200px;
+            margin: 100px auto;
+        }
+        #strengthLevel{
+            display: inline-block;
+        }
+        .strengthLv0{
+            width: 120px;
+            height: 6px;
+            border: 1px solid #ccc;
+            padding: 2px;
+        }
+        .strengthLv1{
+            width: 40px;
+            height: 6px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            background-color: green;
+        }
+        .strengthLv2{
+            width: 80px;
+            height: 6px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            background-color: orange;
+        }
+        .strengthLv3{
+            width: 120px;
+            height: 6px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div id="dv">
+    <label for="pwd">密码</label>
+    <input type="text" id="pwd" />
+    <div>
+        <em>密码强度</em>
+        <div class="strengthLv0" id="strengthLevel"></div>
+    </div>
+</div>
+<script>
+    var strength = document.getElementById("strengthLevel");
+    //（1）获取文本框注册键盘抬起事件
+    document.getElementById("pwd").onkeyup = function(){
+        if(this.value.length > 6){
+          var lvl = getLvl(this.value);
+          strength.className = "strengthLv"+lvl;
+        }else{
+          strength.className = "strengthLv0";
+        }
+    };
+    function getLvl(pwd){
+      var lvl = 0;
+      if(/[0-9]/.test(pwd)){
+        lvl++;
+      }
+      if (/[a-zA-Z]/.test(pwd)){
+        lvl++;
+      } 
+      if (/[^0-9a-zA-Z_]/.test(pwd)){
+        lvl++;
+      }
+      return lvl;
+    }
+</script>
+</body>
+</html>

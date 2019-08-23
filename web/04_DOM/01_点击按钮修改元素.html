@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>点击按钮修改图片属性</title>
+</head>
+<body>
+<input type="button" value="显示效果" id="btn" />
+<img src="../images/1.jpg" alt="哈哈" title="叽叽"/>
+<script>
+    //（1）点击按钮修改图片的alt和title属性
+    document.getElementById("btn").onclick = function () {
+      var imgObjs = document.getElementsByTagName("img");
+      imgObjs[0].src="../images/2.jpg";
+      imgObjs[0].title="现实";
+    };
+</script>
+</body>
+</html>

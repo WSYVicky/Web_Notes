@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>列表隔行变色</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .wrap{
+            width: 500px;
+            margin: 100px auto 0;
+        }
+        table{
+            border-collapse: collapse;
+            border-spacing: 0;
+            border: 1px solid #cccccc;
+            width: 500px;
+            cursor: pointer;
+        }
+        th,
+        td {
+            border: 1px solid #ccc;
+            color: #404060;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: hotpink;
+            font: bold 16px "微软雅黑";
+            color: #fff;
+        }
+
+        td {
+            font: 14px "微软雅黑";
+        }
+
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <table>
+        <thead>
+            <tr>
+                <th>序号</th>
+                <th>影片</th>
+                <th>演员</th>
+                <th>评分</th>
+            </tr>
+        </thead>
+        <tbody id="tb">
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>2</td>
+                <td>2</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>4</td>
+                <td>4</td>
+                <td>4</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<script src="../common.js"></script>
+<script>
+    var trObj = my$("tb").getElementsByTagName("tr");
+    for(var i=0; i<trObj.length; i++){
+      trObj[i] .style.backgroundColor = i%2 == 0 ? "pink" : "hotpink";
+      trObj[i].onmouseover = mouseoverHandle;
+      trObj[i].onmouseout = mouseoutHandle;
+    }
+    var lastColor = "";
+    function mouseoverHandle() {
+      lastColor = this.style.backgroundColor;
+      this.style.backgroundColor = "orange";
+    }
+    function mouseoutHandle() {
+      this.style.backgroundColor = lastColor;
+    }
+</script>
+</body>
+</html>

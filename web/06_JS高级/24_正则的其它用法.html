@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //（1）把字符串中的数字全部显示出来 match exec
+        // 第一种写法：str.match(/\d{5}/g);
+        var str="中国移动:10086,中国联通:10010,中国电信:10000";
+        var array=str.match(/\d{5}/g);
+        console.log(array);
+        // 第二种写法：reg.exec(str);
+        var str = "中国移动:10086,中国联通:10010,中国电信:10000";
+        var reg=/\d{5}/g;
+        //通过正则表达式匹配这个字符串
+        var array=reg.exec(str);
+        while (array!=null){
+          //输出匹配的内容
+          console.log(array[0]);
+          array=reg.exec(str);
+        }
+
+    // (2) 提取年月日里的日 match
+        var str="2017-11-12";
+        var array = str.match(/(\d{4})[-](\d{2})[-](\d{2})/g);
+        console.log(array);
+        //正则表达式对象.$3
+        console.log(RegExp.$3);
+
+    //（3）h替换成S
+        var str="HhpphH";//SSppSS
+        str=str.replace(/[h]/gi,"S");
+        console.log(str);
+</script>
+</body>
+</html>

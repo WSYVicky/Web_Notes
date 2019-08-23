@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>格式化日期和时间</title>
+</head>
+<body>
+<script>
+    function getDate(dt) {
+      var year = dt.getFullYear();
+      var month = dt.getMonth() + 1;
+      var day = dt.getDate();
+      var hour = dt.getHours();
+      var minute = dt.getMinutes();
+      var second = dt.getSeconds();
+      month = month < 10 ? "0"+month : month;
+      day = day <10 ? "0"+day : day;
+      hour = hour <10 ? "0"+hour : hour;
+      second = second <10 ? "0"+second : second;
+      return year + "年" + month + "月" + day + "日" + hour + ":" + minute + ":" + second;
+    }
+
+    console.log(getDate(new Date()));
+</script>
+</body>
+</html>

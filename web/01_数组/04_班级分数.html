@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>班级分数</title>
+</head>
+<body>
+<script>
+  //案例9:提示用户输入班级人数,求总成绩,平均值,最高分,最低分---扩展
+
+  function classScore(arr) {
+    var perScores = arr;
+
+    var sum = 0;
+    var avg = 0; //平均值
+    var max=perScores[0];//最大值
+    var min=perScores[0];//最小值
+    for (var i = 0; i < perScores.length; i++) {
+      sum += perScores[i];//求和
+      //求最大值
+      if(max<perScores[i]){
+        max=perScores[i];
+      }
+      //求最小值
+      if(min>perScores[i]){
+        min=perScores[i];
+      }
+    }
+    //平均值
+    avg = sum / perScores.length;
+    console.log("和为:"+sum);
+    console.log("平均值:"+avg);
+    console.log("最大值:"+max);
+    console.log("最小值:"+min);
+  }
+
+  classScore([100,80,90]);
+</script>
+</body>
+</html>

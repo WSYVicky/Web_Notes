@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+  //apply和call可以改变this的指向
+
+  function Person(age,sex) {
+    this.age=age;
+    this.sex=sex;
+  }
+  //通过原型添加方法
+  Person.prototype.sayHi=function (x,y) {
+    console.log("您好啊:"+this.sex);
+    return 1000;
+  };
+  var per=new Person(10,"男");
+  per.sayHi();
+
+  console.log("==============");
+  function Student(name,sex) {
+    this.name=name;
+    this.sex=sex;
+  }
+  var stu=new Student("小明","人妖");
+  //改变this指向
+  var r1=per.sayHi.apply(stu,[10,20]);
+  var r2=per.sayHi.call(stu,10,20);
+
+  console.log(r1);
+  console.log(r2);
+</script>
+</body>
+</html>

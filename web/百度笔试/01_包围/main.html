@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<table id="jsLayout">
+    <tbody>
+    <tr><td class="current"></td><td class="wrap"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td class="wrap"></td><td class="wrap"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+</table>
+<script>
+    var tdObjs = document.getElementsByTagName("td");
+    var trObjs = document.getElementsByTagName("tr");
+    for(var i=0; i<tdObjs.length; i++){
+      tdObjs[i].setAttribute("index",i);
+      tdObjs[i].onclick = function (e) {
+        for(var j=0; j<tdObjs.length; j++){
+          // 清除所有td的背景
+          tdObjs[j].className= "";
+        }
+        //获取目标元素索引值
+        var target = e.target;
+        var numtd = parseInt(target.getAttribute("index"));
+
+        //获取当前td所在的行的索引
+        var numtr = parseInt(numtd/10);
+
+        target.className = "current";
+
+        //分情况给方块周围的td上色
+        if(1<= numtd && numtd <=9){
+           tdObjs[numtd-1].className = tdObjs[numtd+1].className = "wrap";
+           tdObjs[numtd+9].className = tdObjs[numtd+10].className = tdObjs[numtd+11].className = "wrap";
+        }
+        else if(91<= numtd && numtd <=98){
+          tdObjs[numtd-1].className = tdObjs[numtd+1].className = "wrap";
+          tdObjs[numtd-9].className = tdObjs[numtd-10].className = tdObjs[numtd-11].className = "wrap";
+        }
+        else if(10<=numtd && numtd<=80 && numtd%10 == 0){
+          tdObjs[numtd-10].className = tdObjs[numtd+10].className = "wrap";
+          tdObjs[numtd-9].className = tdObjs[numtd+1].className = tdObjs[numtd+11].className = "wrap";
+        }
+        else if(10<=numtd && numtd<=80 && numtd%10 == 0){
+          tdObjs[numtd-10].className = tdObjs[numtd+10].className = "wrap";
+          tdObjs[numtd-9].className = tdObjs[numtd+1].className = tdObjs[numtd+11].className = "wrap";
+        }
+        else if(19<=numtd && numtd<=99 && numtd%10 == 9){
+          tdObjs[numtd-10].className = tdObjs[numtd+10].className = "wrap";
+          tdObjs[numtd-11].className = tdObjs[numtd-1].className = tdObjs[numtd+9].className = "wrap";
+        }
+        else if(numtd === 0 || numtd === 9 || numtd == 90 || numtd === 99){
+          tdObjs[numtd+1].className = tdObjs[numtd+11].className = tdObjs[numtd+10].className = "wrap";
+        }
+        else {
+          tdObjs[numtd-1].className = tdObjs[numtd+1].className = "wrap";
+          tdObjs[numtd-11].className = tdObjs[numtd-9].className = tdObjs[numtd-10].className = "wrap";
+          tdObjs[numtd+9].className = tdObjs[numtd+10].className = tdObjs[numtd+11].className = "wrap";
+        }
+      }
+    }
+</script>
+</body>
+</html>

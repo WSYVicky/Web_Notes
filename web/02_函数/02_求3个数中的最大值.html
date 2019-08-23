@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>求3个数中的最大值</title>
+</head>
+<body>
+<script>
+    function getThreeMax(x,y,z) {
+      return x > y ? (x > z ? x : z) : (y > z ? y : z);
+    }
+    console.log(getThreeMax(10,2,24));
+</script>
+</body>
+</html>
