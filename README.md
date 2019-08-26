@@ -1,17 +1,9 @@
 # 前端学习整理
 ## 1 笔记整理
 
+- #### [书目笔记](http://note.youdao.com/noteshare?id=a076d342f05be5d5b109c0ff0d5f4ed1)
 
-| 书目                                                         | 视频课笔记                                                   |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [《HTML5 APP开发 从入门到精通》](http://note.youdao.com/noteshare?id=2cf4e90dc0cc540bd4b7ea33643d8491) | [Html3_Css_Css5](http://note.youdao.com/noteshare?id=ce0387cdc1d935732544a5c5f7ff42f7) |
-| [《Bootstrap实战从入门到精通》](https://note.youdao.com/share/?id=e800d618891adad1c26b7b368c9c8419&type=notebook#/) | [jQuery](http://note.youdao.com/noteshare?id=83c9719ab167e9d96c6c66479322a671) |
-| [《JavaScript 高级程序设计》](https://note.youdao.com/share/?id=60ce8412484a85dcf50f93d5bf9e7bac&type=notebook#/) | [JS](http://note.youdao.com/noteshare?id=614d3ef6b4269a9ef4ec09745963387b) |
-| [ 《CSS权威指南》 ](http://note.youdao.com/noteshare?id=6494f24dd07145974db5e094a7ae07ff) | [NodeJs](http://note.youdao.com/noteshare?id=bc9551d954dd8c28733898c459bc073e) |
-| [《ES6标准入门》](http://note.youdao.com/noteshare?id=0fa559970b80dd51ca7cc9d89190a4d0) | [VUE](http://note.youdao.com/noteshare?id=548d42b8304206366ff872078aa9f610) |
-| [《Vue.js前端开发》](http://note.youdao.com/noteshare?id=b5c1ea0e8d5882d268df578fe46d0ff6) | [Web_API](http://note.youdao.com/noteshare?id=4ed010ab6e224ece3f319d38c5b12656) |
-| [《深入浅出node.js》](http://note.youdao.com/noteshare?id=6f8e5218b45690a412a5a17799466172) | [WEB前端知识框架](http://note.youdao.com/noteshare?id=73db8bbb7655e0ea76be578d662aec6e) |
-| [《jQueryMobile》](http://note.youdao.com/noteshare?id=c4a1e62217c5a87c128490f0f80b40ba) | [PHP](http://note.youdao.com/noteshare?id=67071b49a922ab745b1c37d7f262145e) |
+- #### [视频课笔记](http://note.youdao.com/noteshare?id=ce7a7cba3dadf53cbcaee1c8e6bfacd5)
 
 ## 2 Codepen练习
 
@@ -77,4 +69,4 @@
 1. sublime
 1. webstorm
 
-4. vscode
+4. [**vscode**]()
